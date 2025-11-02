@@ -33,9 +33,9 @@ public class InterfaceUsuario {
      */
     private void exibirCabecalho() {
         System.out.println("=========================================");
-        System.out.println("   🚀 CONVERSOR MILHAS ⇄ QUILÔMETROS");
+        System.out.println("CONVERSOR MILHAS ⇄ QUILÔMETROS");
         System.out.println("=========================================");
-        System.out.println("📍 1 milha = " + conversor.getFatorConversao() + " quilômetros");
+        System.out.println("1 milha = " + conversor.getFatorConversao() + " quilômetros");
     }
     
     /**
@@ -57,11 +57,11 @@ public class InterfaceUsuario {
      * Exibe as opções do menu principal
      */
     private void exibirMenu() {
-        System.out.println("\n📋 MENU PRINCIPAL:");
+        System.out.println("\nMENU PRINCIPAL:");
         System.out.println("1. Milhas → Quilômetros");
         System.out.println("2. Quilômetros → Milhas");
         System.out.println("3. Sair");
-        System.out.print("➡️  Escolha uma opção: ");
+        System.out.print("Escolha uma opção: ");
     }
     
     /**
@@ -92,10 +92,10 @@ public class InterfaceUsuario {
                 converterKmParaMilhas();
                 break;
             case 3:
-                System.out.println("👋 Encerrando aplicação...");
+                System.out.println("Encerrando aplicação...");
                 break;
             default:
-                System.out.println("❌ Opção inválida! Por favor, escolha 1, 2 ou 3.");
+                System.out.println("Opção inválida! Por favor, escolha 1, 2 ou 3.");
         }
     }
     
@@ -103,7 +103,7 @@ public class InterfaceUsuario {
      * Realiza conversão de milhas para quilômetros
      */
     private void converterMilhasParaKm() {
-        System.out.println("\n🔄 CONVERSÃO: MILHAS → QUILÔMETROS");
+        System.out.println("\nCONVERSÃO: MILHAS → QUILÔMETROS");
         double milhas = lerValorNumerico();
         double km = conversor.converterMilhasParaKm(milhas);
         exibirResultado(milhas, "milhas", km, "quilômetros");
@@ -113,7 +113,7 @@ public class InterfaceUsuario {
      * Realiza conversão de quilômetros para milhas
      */
     private void converterKmParaMilhas() {
-        System.out.println("\n🔄 CONVERSÃO: QUILÔMETROS → MILHAS");
+        System.out.println("\nCONVERSÃO: QUILÔMETROS → MILHAS");
         double km = lerValorNumerico();
         double milhas = conversor.converterKmParaMilhas(km);
         exibirResultado(km, "quilômetros", milhas, "milhas");
@@ -126,19 +126,19 @@ public class InterfaceUsuario {
     private double lerValorNumerico() {
         while (true) {
             try {
-                System.out.print("📏 Digite a distância: ");
+                System.out.print("Digite a distância: ");
                 double valor = scanner.nextDouble();
                 scanner.nextLine(); // Limpa o buffer
                 
                 if (valor < 0) {
-                    System.out.println("❌ Erro: A distância não pode ser negativa!");
+                    System.out.println("Erro: A distância não pode ser negativa!");
                     continue;
                 }
                 
                 return valor;
                 
             } catch (Exception e) {
-                System.out.println("❌ Erro: Por favor, digite um número válido!");
+                System.out.println("Erro: Por favor, digite um número válido!");
                 scanner.nextLine(); // Limpa entrada inválida
             }
         }
